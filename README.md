@@ -1,4 +1,4 @@
-# food-cal — food components, calories and macros from a webcam
+# food-cal - food components, calories and macros from a webcam
 
 Webcam above the plate → segmentation of the food components (YOLO26-seg) → area in cm² → grams → kcal, protein/fat/carbs.
 Results go to an ESP32 touch display on the desk, with a daily food diary. You can also hold the mic button and say what you ate.
