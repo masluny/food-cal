@@ -1,0 +1,10 @@
+configs/secrets.yaml
+.venv/
+data/
+runs/
+models/
+weights/
+esp32/build/
+esp32/food_cal_display/build/
+esp32/backup/
+__pycache__/

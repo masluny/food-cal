@@ -1,0 +1,43 @@
+# Values per 100 g: kcal, protein, fat, carbs (g).
+# g_cm2       = grams per 1 cm² of area seen from above (thickness × density).
+# uncertainty = relative portion error (0.20 = ±20%).
+#
+# Sources and derivations: research/nutrition_values.md (2026-10-12).
+# - kcal/protein/fat/carbs: USDA FoodData Central (SR Legacy 2018-04, FNDDS 2022-10); the Polish NIZP-PZH tables are paid.
+# - toast and zapiekanka: USDA components, but ASSUMED component weights (toast 93 g, zapiekanka 305 g).
+# - breaded_cutlet: USDA proxy (pork chop/steak, coated) — probably too low; a recipe-based schabowy is ~300 kcal.
+# - g_cm2: sourced for pizza, bread/toast, sausage, potatoes, cutlet; the rest is an ASSUMED pile height.
+# Best: replace the nutrients with labels of the products you buy, and calibrate g_cm2 on a few weighed meals.
+
+pizza:          {kcal: 261, protein: 11.1, fat: 10.6, carbs: 29.7, g_cm2: 0.70, uncertainty: 0.20}
+toast:          {kcal: 299, protein: 14.6, fat: 14.6, carbs: 27.2, g_cm2: 0.95, uncertainty: 0.20}
+zapiekanka:     {kcal: 205, protein: 10.5, fat: 6.5,  carbs: 27.5, g_cm2: 1.30, uncertainty: 0.25}
+bread:          {kcal: 266, protein: 9.3,  fat: 3.7,  carbs: 48.4, g_cm2: 0.40, uncertainty: 0.30}
+pasta:          {kcal: 158, protein: 5.8,  fat: 0.9,  carbs: 30.9, g_cm2: 1.30, uncertainty: 0.35}
+sauce:          {kcal: 104, protein: 3.9,  fat: 6.9,  carbs: 6.5,  g_cm2: 0.45, uncertainty: 0.50}   # 60% tomato (70 kcal) / 40% cream (156 kcal)
+cheese_butter:  {kcal: 337, protein: 24.0, fat: 26.0, carbs: 2.0,  g_cm2: 0.25, uncertainty: 0.40}   # butter alone: 717 kcal, fat 81.1
+potatoes:       {kcal: 86,  protein: 1.7,  fat: 0.1,  carbs: 20.0, g_cm2: 2.40, uncertainty: 0.35}
+fries:          {kcal: 275, protein: 3.1,  fat: 14.3, carbs: 34.0, g_cm2: 0.90, uncertainty: 0.40}
+rice:           {kcal: 130, protein: 2.7,  fat: 0.3,  carbs: 28.2, g_cm2: 1.30, uncertainty: 0.35}
+meat:           {kcal: 247, protein: 26.6, fat: 14.9, carbs: 0.0,  g_cm2: 1.50, uncertainty: 0.25}
+chicken:        {kcal: 190, protein: 28.9, fat: 7.4,  carbs: 0.0,  g_cm2: 1.50, uncertainty: 0.30}
+breaded_cutlet: {kcal: 252, protein: 24.6, fat: 13.2, carbs: 7.2,  g_cm2: 0.85, uncertainty: 0.25}
+sausage:        {kcal: 330, protein: 13.2, fat: 29.1, carbs: 3.2,  g_cm2: 2.00, uncertainty: 0.35}
+fish:           {kcal: 159, protein: 23.1, fat: 6.7,  carbs: 0.0,  g_cm2: 1.30, uncertainty: 0.25}
+egg:            {kcal: 176, protein: 13.1, fat: 12.7, carbs: 1.0,  g_cm2: 1.20, uncertainty: 0.45}
+salad:          {kcal: 73,  protein: 1.1,  fat: 4.7,  carbs: 7.5,  g_cm2: 1.00, uncertainty: 0.40}
+vegetables:     {kcal: 33,  protein: 1.3,  fat: 0.2,  carbs: 7.2,  g_cm2: 1.00, uncertainty: 0.40}
+fruit:          {kcal: 58,  protein: 0.7,  fat: 0.2,  carbs: 14.9, g_cm2: 2.00, uncertainty: 0.40}
+soup:           {kcal: 46,  protein: 2.7,  fat: 1.5,  carbs: 5.8,  g_cm2: 1.60, uncertainty: 0.40}
+sweets:         {kcal: 404, protein: 5.5,  fat: 15.6, carbs: 61.8, g_cm2: 1.20, uncertainty: 0.40}
+drink:          {kcal: 53,  protein: 0.2,  fat: 0.2,  carbs: 9.0,  g_cm2: 6.00, uncertainty: 0.40}   # juice/soda/wine (coffee, tea, milk: own classes since 2026-10-13)
+nuts:           {kcal: 607, protein: 19.8, fat: 53.7, carbs: 21.7, g_cm2: 1.00, uncertainty: 0.40}
+other:          {kcal: 184, protein: 12.4, fat: 6.6,  carbs: 18.3, g_cm2: 1.00, uncertainty: 0.50}
+
+# added 2026-10-13 — USDA FNDDS 2022-10 (see research/nutrition_values.md, section 6); g_cm2 ASSUMED from typical portions
+burger:         {kcal: 292, protein: 16.9, fat: 16.4, carbs: 18.0, g_cm2: 2.00, uncertainty: 0.30}   # fast-food cheeseburgers, Whopper
+hot_dog:        {kcal: 296, protein: 10.9, fat: 17.4, carbs: 23.7, g_cm2: 1.60, uncertainty: 0.30}   # hot dog in a white bun
+burrito:        {kcal: 219, protein: 11.2, fat: 8.6,  carbs: 23.9, g_cm2: 2.30, uncertainty: 0.35}
+dumplings:      {kcal: 195, protein: 5.3,  fat: 6.1,  carbs: 29.6, g_cm2: 1.40, uncertainty: 0.30}   # pierogi
+coffee_tea:     {kcal: 17,  protein: 0.8,  fat: 0.4,  carbs: 2.6,  g_cm2: 5.00, uncertainty: 0.60}   # ASSUMED 20% milk + 1 tsp sugar per mug
+milk_drink:     {kcal: 86,  protein: 3.4,  fat: 4.3,  carbs: 8.6,  g_cm2: 6.00, uncertainty: 0.50}   # ASSUMED half milk, half milkshake

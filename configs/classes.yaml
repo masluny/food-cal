@@ -1,0 +1,68 @@
+# Model classes (food components on a plate) + mapping from FoodSeg103 class ids.
+# Order = YOLO class id. Classes without a mapping (toast, zapiekanka) are learned only from
+# Food-101 pseudo-labels and your own webcam photos.
+# After changing this list, rerun: python src/prepare_foodseg.py
+
+classes:
+  - name: pizza
+    foodseg: [61]
+  - name: toast
+    foodseg: []
+  - name: zapiekanka               # Polish open-faced baguette with mushrooms and cheese
+    foodseg: []
+  - name: bread
+    foodseg: [58]
+  - name: pasta
+    foodseg: [64, 65]
+  - name: sauce
+    foodseg: [52]
+  - name: cheese_butter
+    foodseg: [9]
+  - name: potatoes
+    foodseg: [70]
+  - name: fries
+    foodseg: [3]
+  - name: rice
+    foodseg: [66]
+  - name: meat
+    foodseg: [46, 47, 51]          # steak, pork, lamb
+  - name: chicken
+    foodseg: [48]
+  - name: breaded_cutlet
+    foodseg: [50]                  # fried meat
+  - name: sausage
+    foodseg: [49]
+  - name: fish
+    foodseg: [53, 54, 55, 56]
+  - name: egg
+    foodseg: [24]
+  - name: salad
+    foodseg: [80, 91, 102]         # lettuce, cabbage, salad
+  - name: vegetables
+    foodseg: [18, 21, 35, 59, 68, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 81, 82, 83, 84,
+              85, 86, 87, 88, 89, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101]
+  - name: fruit
+    foodseg: [20, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
+  - name: soup
+    foodseg: [57]
+  - name: sweets
+    foodseg: [1, 2, 4, 5, 6, 7, 8, 10, 67]
+  - name: drink                    # juice, soda, wine (coffee/tea and milk drinks have own classes)
+    foodseg: [11, 14]              # wine, juice
+  - name: nuts
+    foodseg: [17, 19, 22, 23]
+  - name: other
+    foodseg: [62, 103]             # baozi, other ingredients
+  # added 2026-10-13 (appended, so older models keep their class ids)
+  - name: burger
+    foodseg: [60]                  # hamburg (+ Food-101 hamburger)
+  - name: hot_dog
+    foodseg: []                    # Food-101 hot_dog
+  - name: burrito
+    foodseg: []                    # Food-101 breakfast_burrito
+  - name: dumplings                # pierogi look-alikes
+    foodseg: [63]                  # wonton dumplings (+ Food-101 dumplings, gyoza)
+  - name: coffee_tea
+    foodseg: [13, 16]              # coffee, tea
+  - name: milk_drink
+    foodseg: [12, 15]              # milkshake, milk

@@ -1,0 +1,24 @@
+# Voice input: hold the microphone button on the display, say what you ate, release.
+# Speech -> text locally (faster-whisper, audio never leaves the PC) -> language model -> kcal and macros.
+# API keys live in configs/secrets.yaml.
+
+provider: google            # asked first: google (Gemini API) or openrouter
+fallback: openrouter        # asked when the first one fails (error, overload, bad answer); null = no backup
+
+# Google Gemini
+google_model: gemini-3.8-flash
+thinking_level: low         # minimal / low / medium / high — higher = more careful, slower
+google_timeout: 12          # seconds to wait for Gemini, then Kimi (the backup) is asked
+retries: 0                  # extra tries of the same model when Google says it is overloaded (HTTP 503)
+google_fallback_model: null # another Gemini model to try if the main one stays overloaded (e.g. gemini-3.5-flash-lite)
+
+# OpenRouter
+openrouter_model: moonshotai/kimi-k3
+openrouter_timeout: 25      # seconds to wait for the OpenRouter model
+reasoning: false            # true = the model thinks first: maybe more accurate, but ~30 s instead of ~2 s
+
+# speech recognition and microphone
+whisper_model: small        # tiny / base / small / medium — bigger = more accurate, slower (runs on the CPU)
+language: pl                # pl / en, or null = detect (short phrases then get mistaken for Russian)
+mic_device: Focusrite       # part of the device name; null = Windows default input (e.g. "C310" = webcam mic)
+max_seconds: 20             # recording stops by itself after this long
